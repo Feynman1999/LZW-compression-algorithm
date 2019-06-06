@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0043)https://www.lfd.uci.edu/~gohlke/pythonlibs/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="cache-control" content="no-cache, no-store">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta http-equiv="author" content="Christoph Gohlke">
+<meta http-equiv="generator" content="Edlin">
+<meta name="robots" content="noarchive, nofollow, notranslate">
+<meta name="handheldfriendly" content="true">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style type="text/css">
+body {color: #000000; background-color:#ffffff; margin:0.5em; padding: 0.25em 0.5em 0 0.5em;}
+p {margin:0; padding:0.25em 0 0.25em 0;}
+h1 {margin:0; padding:0 0 0.15em 0;}
+h2 {font-size:1.1em}
+a {color: #000080;}
+a:hover {color: #E00000; text-decoration: underline;}
+p.date {padding-bottom:0.75em;}
+p.author {}
+p.author a {font-weight:bold; text-decoration: none;}
+p.author a:hover {color: #E00000; text-decoration: underline;}
+ul.pylibs {padding: 0 0 0 1.5em; margin: 0em; text-indent: -1.5em;}
+ul.pylibs li {list-style-type:none; padding:0.5em 0 0.3em 0; margin: 0;}
+ul.pylibs li a {text-decoration: none;}
+ul.pylibs li a:hover {color: #E00000; text-decoration: underline; border-color: #888800;}
+ul.pylibs li span {font-size:0.8em; color:#666666;}
+ul.pylibs li ul span {font-size:1em;}
+ul.pylibs li ul {padding: 0em; margin: 0em; text-indent: 0;}
+ul.pylibs li ul a {text-decoration: underline;}
+ul.pylibs li ul li {list-style-type:none; padding:0.3em 0 0 0; margin: 0; font-style:normal; white-space:nowrap;}
+ul.pylibz li ul li {list-style-type:none; display:inline; padding-right:0.6em; margin:0; white-space:nowrap}
+ol.inline {padding:0}
+ol.inline * {display:inline; padding-right:0.3em; text-decoration: none;}
+ol.inline a:hover {color: #E00000; text-decoration: underline; border-color: #888800;}
+ul.unavailable li {list-style-type:none; padding-bottom:0.3em;text-indent: -1em;}
+hr {clear:both; height:1px; color: #9E9E9E; background-color: #9E9E9E; margin:0.75em 0 0.75em 0;}
+</style>
+<script type="text/javascript">
+// <![CDATA[
+if (!top.location.href.startsWith('https://www.lfd.uci.edu/~gohlke/pythonlibs/')) top.location.href='https://www.lfd.uci.edu/~gohlke/pythonlibs/';function dc(ml,mi){var ot="";for(var j=0;j<mi.length;j++)ot+=String.fromCharCode(ml[mi.charCodeAt(j)-47]);document.write(ot);}function dl1(ml,mi){var ot="https://download.lfd.uci.edu/pythonlibs/";for(var j=0;j<mi.length;j++)ot+=String.fromCharCode(ml[mi.charCodeAt(j)-47]);location.href=ot;}function dl(ml,mi){mi=mi.replace('&lt;','<');mi=mi.replace('&#62;','>');mi=mi.replace('&#38;','&');setTimeout(function(l){dl1(ml,mi)},1500, 1);}
+// ]]>
+</script>
+<title>Python Extension Packages for Windows - Christoph Gohlke</title>
+</head>
+<body>
+<h1><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" style="color:#000000;text-decoration:none;">Unofficial Windows Binaries for Python Extension Packages</a></h1>
+<p class="author">by <a href="https://www.lfd.uci.edu/~gohlke/">Christoph Gohlke</a>, <a href="https://www.lfd.uci.edu/">Laboratory for Fluorescence Dynamics</a>, <a href="https://www.uci.edu/">University of California, Irvine</a>.</p>
+<p class="date">Updated on  5 June 2019 at 23:11 UTC.</p>
+<p>This page provides 32- and 64-bit Windows binaries of many scientific open-source extension packages for the official <a href="https://www.python.org/download/">CPython distribution</a> of the <a href="https://www.python.org/">Python</a> programming language. A few binaries are available for the <a href="http://pypy.org/download.html">PyPy</a> distribution.</p>
+<p>The files are unofficial (meaning: informal, unrecognized, personal, unsupported, no warranty, no liability, provided "as is") and made available for testing and evaluation purposes.</p>
+<p>Most binaries are built from source code found on <a href="https://pypi.python.org/pypi">PyPI</a> or in the projects public revision control systems. Source code changes, if any, have been submitted to the project maintainers or are included in the packages.</p>
+<p>Refer to the documentation of the individual packages for license restrictions and dependencies.</p>
+<p>If downloads fail, reload this page, enable JavaScript, disable download managers, disable proxies, clear cache, use Firefox, reduce number and frequency of downloads. Please only download files manually as needed.</p>
+<p>Use <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">pip</a> version 9 or newer to <a href="https://pip.pypa.io/en/latest/user_guide.html#installing-from-wheels">install the downloaded .whl files</a>. This page is not a pip package index.</p>
+<p>Many binaries depend on <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy">numpy-1.15+mkl</a> and the <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019</a> for Python 3, or the Microsoft Visual C++ 2008 Redistributable Package <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15336">x64</a>, <a href="https://www.microsoft.com/en-us/download/details.aspx?id=29">x86</a>, and <a href="https://www.microsoft.com/en-us/download/details.aspx?id=26368">SP1</a> for Python 2.7.</p>
+<p>Install <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy">numpy+mkl</a> before other packages that depend on it.</p>
+<p>The binaries are compatible with the most recent official CPython distributions on Windows &gt;=6.0. Chances are they do not work with custom Python distributions included with Blender, Maya, ArcGIS, OSGeo4W, ABAQUS, Cygwin, Pythonxy, Canopy, EPD, Anaconda, WinPython etc. Many binaries are not compatible with Windows XP or Wine.</p>
+<p>The packages are ZIP or 7z files, which allows for manual or scripted installation or repackaging of the content.</p>
+<p style="font-weight:bold">The files are provided "as is" without warranty or support of any kind. The entire risk as to the quality and performance is with you.</p>
+<p>The opinions or statements expressed on this page should not be taken as a position or endorsement of the Laboratory for Fluorescence Dynamics or the University of California.</p>
+<hr>
+<ol class="inline">
+<li><strong>Index by date:</strong></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#line_profiler" title="Jun 05, 2019">line_profiler</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#regex" title="Jun 05, 2019">regex</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#typed_ast" title="Jun 05, 2019">typed_ast</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ets" title="Jun 05, 2019">ets</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywinhook" title="Jun 05, 2019">pywinhook</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygresql" title="Jun 05, 2019">pygresql</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg" title="Jun 05, 2019">psycopg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cupy" title="Jun 05, 2019">cupy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap" title="Jun 05, 2019">basemap</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fastrlock" title="Jun 05, 2019">fastrlock</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#moderngl" title="Jun 05, 2019">moderngl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl" title="Jun 05, 2019">pyopengl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#imagecodecs-lite" title="Jun 05, 2019">imagecodecs-lite</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zope.interface" title="Jun 05, 2019">zope.interface</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-lzo" title="Jun 05, 2019">python-lzo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#brotli" title="Jun 05, 2019">brotli</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-snappy" title="Jun 05, 2019">python-snappy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#backports.lzma" title="Jun 05, 2019">backports.lzma</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-lzf" title="Jun 05, 2019">python-lzf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32" title="Jun 05, 2019">pywin32</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted" title="Jun 05, 2019">twisted</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#videocapture" title="Jun 05, 2019">videocapture</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mahotas" title="Jun 05, 2019">mahotas</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#javabridge" title="Jun 05, 2019">javabridge</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#imread" title="Jun 05, 2019">imread</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#blosc" title="Jun 05, 2019">blosc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scandir" title="Jun 05, 2019">scandir</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#greenlet" title="Jun 05, 2019">greenlet</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#curses" title="Jun 05, 2019">curses</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fast-histogram" title="Jun 05, 2019">fast-histogram</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zfpy" title="Jun 05, 2019">zfpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mkl-service" title="Jun 05, 2019">mkl-service</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mkl_fft" title="Jun 05, 2019">mkl_fft</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mkl_random" title="Jun 05, 2019">mkl_random</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#reportlab" title="Jun 05, 2019">reportlab</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cf-units" title="Jun 05, 2019">cf-units</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#udunits" title="Jun 05, 2019">udunits</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cftime" title="Jun 05, 2019">cftime</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#noise" title="Jun 04, 2019">noise</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numcodecs" title="Jun 04, 2019">numcodecs</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zstd" title="Jun 04, 2019">zstd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gevent" title="Jun 04, 2019">gevent</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#msvc_runtime" title="Jun 04, 2019">msvc_runtime</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-image" title="Jun 04, 2019">scikit-image</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-learn" title="Jun 04, 2019">scikit-learn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopencl" title="Jun 04, 2019">pyopencl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy" title="Jun 04, 2019">scipy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycurl" title="Jun 04, 2019">pycurl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#psf" title="Jun 04, 2019">psf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#akima" title="Jun 04, 2019">akima</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#chebyfit" title="Jun 04, 2019">chebyfit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#transformations" title="Jun 04, 2019">transformations</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#vidsrc" title="Jun 04, 2019">vidsrc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyyaml" title="Jun 04, 2019">pyyaml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#peewee" title="Jun 04, 2019">peewee</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lz4" title="Jun 04, 2019">lz4</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bitarray" title="Jun 04, 2019">bitarray</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#rapidjson" title="Jun 04, 2019">rapidjson</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#markupsafe" title="Jun 04, 2019">markupsafe</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycosat" title="Jun 04, 2019">pycosat</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tornado" title="Jun 04, 2019">tornado</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyproj" title="Jun 04, 2019">pyproj</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml" title="Jun 04, 2019">lxml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bottleneck" title="Jun 04, 2019">bottleneck</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cffi" title="Jun 04, 2019">cffi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzmq" title="Jun 04, 2019">pyzmq</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#psutil" title="Jun 04, 2019">psutil</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#msgpack" title="Jun 04, 2019">msgpack</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#netcdf4" title="Jun 04, 2019">netcdf4</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sqlalchemy" title="Jun 04, 2019">sqlalchemy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pandas" title="Jun 04, 2019">pandas</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywinpty" title="Jun 04, 2019">pywinpty</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywavelets" title="Jun 04, 2019">pywavelets</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ndimage" title="Jun 04, 2019">ndimage</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#kiwisolver" title="Jun 04, 2019">kiwisolver</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#matplotlib" title="Jun 04, 2019">matplotlib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#imagecodecs" title="Jun 04, 2019">imagecodecs</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lfdfiles" title="Jun 04, 2019">lfdfiles</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#h5py" title="Jun 04, 2019">h5py</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pillow" title="Jun 04, 2019">pillow</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pytables" title="Jun 04, 2019">pytables</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numexpr" title="Jun 04, 2019">numexpr</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy" title="Jun 04, 2019">numpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cython" title="Jun 04, 2019">cython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#protobuf" title="Jun 04, 2019">protobuf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygit2" title="Jun 03, 2019">pygit2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pystackreg" title="Jun 02, 2019">pystackreg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cvxpy" title="Jun 02, 2019">cvxpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jupyter" title="Jun 02, 2019">jupyter</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#param" title="Jun 02, 2019">param</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tifffile" title="Jun 01, 2019">tifffile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numba" title="May 30, 2019">numba</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#llvmlite" title="May 30, 2019">llvmlite</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#recordclass" title="May 30, 2019">recordclass</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#babel" title="May 30, 2019">babel</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol" title="May 28, 2019">pymol</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#icsdll" title="May 28, 2019">icsdll</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#xgboost" title="May 26, 2019">xgboost</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#iminuit" title="May 26, 2019">iminuit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyodeint" title="May 26, 2019">pyodeint</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#discretize" title="May 26, 2019">discretize</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#orange" title="May 26, 2019">orange</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#arctic" title="May 26, 2019">arctic</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#czifile" title="May 25, 2019">czifile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycuda" title="May 24, 2019">pycuda</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#spacy" title="May 17, 2019">spacy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#indexed_gzip" title="May 17, 2019">indexed_gzip</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#rasterio" title="May 17, 2019">rasterio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ruamel.yaml" title="May 17, 2019">ruamel.yaml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jsonobject" title="May 14, 2019">jsonobject</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyrsistent" title="May 13, 2019">pyrsistent</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lazy_object_proxy" title="May 12, 2019">lazy_object_proxy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cheetah" title="May 12, 2019">cheetah</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#persistent" title="May 09, 2019">persistent</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymatgen" title="May 09, 2019">pymatgen</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gvar" title="May 09, 2019">gvar</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gensim" title="May 09, 2019">gensim</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tomopy" title="May 07, 2019">tomopy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#elasticdeform" title="May 06, 2019">elasticdeform</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#hmmlearn" title="May 06, 2019">hmmlearn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#libsbml" title="May 05, 2019">libsbml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyicu" title="May 04, 2019">pyicu</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pythonnet" title="May 04, 2019">pythonnet</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fastcache" title="Apr 30, 2019">fastcache</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyjnius" title="Apr 26, 2019">pyjnius</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cobra" title="Apr 26, 2019">cobra</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fastparquet" title="Apr 26, 2019">fastparquet</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#nlopt" title="Apr 25, 2019">nlopt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cx_oracle" title="Apr 25, 2019">cx_oracle</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tatsu" title="Apr 24, 2019">tatsu</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymongo" title="Apr 23, 2019">pymongo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#triangle" title="Apr 22, 2019">triangle</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#leidenalg" title="Apr 18, 2019">leidenalg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#traits" title="Apr 18, 2019">traits</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycares" title="Apr 11, 2019">pycares</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#opentsne" title="Apr 11, 2019">opentsne</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv" title="Apr 11, 2019">opencv</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#openimageio" title="Apr 04, 2019">openimageio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#daal4py" title="Apr 02, 2019">daal4py</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#freetypepy" title="Mar 30, 2019">freetypepy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy-stl" title="Mar 30, 2019">numpy-stl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fabio" title="Mar 30, 2019">fabio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lsqfit" title="Mar 29, 2019">lsqfit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fiona" title="Mar 29, 2019">fiona</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal" title="Mar 29, 2019">gdal</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sfepy" title="Mar 26, 2019">sfepy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy-quaternion" title="Mar 22, 2019">numpy-quaternion</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jcc" title="Mar 21, 2019">jcc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyclearvolume" title="Mar 20, 2019">pyclearvolume</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyhdf" title="Mar 18, 2019">pyhdf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scs" title="Mar 15, 2019">scs</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydensecrf" title="Mar 15, 2019">pydensecrf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#qimage2ndarray" title="Mar 15, 2019">qimage2ndarray</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap" title="Mar 13, 2019">python-ldap</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#aggdraw" title="Mar 11, 2019">aggdraw</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#dipy" title="Mar 11, 2019">dipy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#simpleitk" title="Mar 10, 2019">simpleitk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#blis" title="Mar 09, 2019">blis</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio" title="Mar 07, 2019">pyaudio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cellcognition" title="Mar 07, 2019">cellcognition</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#apsw" title="Mar 07, 2019">apsw</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#vigra" title="Mar 05, 2019">vigra</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fdint" title="Mar 04, 2019">fdint</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#re2" title="Mar 04, 2019">re2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zfec" title="Mar 04, 2019">zfec</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#debug-information-files" title="Mar 04, 2019">debug-information-files</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mercurial" title="Mar 04, 2019">mercurial</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#imaged11" title="Mar 04, 2019">imaged11</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pytorch" title="Mar 03, 2019">pytorch</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#grpcio" title="Mar 02, 2019">grpcio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sounddevice" title="Mar 02, 2019">sounddevice</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#py-earth" title="Mar 02, 2019">py-earth</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lightning" title="Mar 02, 2019">lightning</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#kwant" title="Feb 28, 2019">kwant</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycifrw" title="Feb 27, 2019">pycifrw</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#yt" title="Feb 26, 2019">yt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#quickfix" title="Feb 25, 2019">quickfix</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycorrfit" title="Feb 25, 2019">pycorrfit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyodbc" title="Feb 25, 2019">pyodbc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cgohlke" title="Feb 25, 2019">cgohlke</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#astropy" title="Feb 25, 2019">astropy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#atom" title="Feb 25, 2019">atom</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#yappi" title="Feb 25, 2019">yappi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#obspy" title="Feb 18, 2019">obspy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mpi4py" title="Feb 15, 2019">mpi4py</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cairocffi" title="Feb 15, 2019">cairocffi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#centrosome" title="Feb 14, 2019">centrosome</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymetis" title="Feb 13, 2019">pymetis</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#meshpy" title="Feb 13, 2019">meshpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#minepy" title="Feb 13, 2019">minepy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pytiff" title="Feb 13, 2019">pytiff</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#slycot" title="Feb 12, 2019">slycot</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient" title="Feb 11, 2019">mysqlclient</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#dulwich" title="Feb 10, 2019">dulwich</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cvxopt" title="Feb 10, 2019">cvxopt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fpzip" title="Feb 08, 2019">fpzip</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scimath" title="Feb 08, 2019">scimath</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyhull" title="Feb 04, 2019">pyhull</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-fmm" title="Feb 04, 2019">scikit-fmm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycryptosat" title="Jan 29, 2019">pycryptosat</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#enaml" title="Jan 29, 2019">enaml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#qdafile" title="Jan 25, 2019">qdafile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyhook" title="Jan 25, 2019">pyhook</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#multiprocess" title="Jan 22, 2019">multiprocess</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wrapt" title="Jan 20, 2019">wrapt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#open3d" title="Jan 20, 2019">open3d</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#logbook" title="Jan 20, 2019">logbook</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.odes" title="Jan 13, 2019">scikits.odes</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#aiohttp" title="Jan 13, 2019">aiohttp</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#openpiv" title="Jan 08, 2019">openpiv</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#imreg" title="Jan 07, 2019">imreg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lucam" title="Jan 07, 2019">lucam</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyslalib" title="Jan 07, 2019">pyslalib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fmkr" title="Jan 05, 2019">fmkr</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#uciwebauth" title="Jan 04, 2019">uciwebauth</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#dnacurve" title="Jan 04, 2019">dnacurve</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fcsfiles" title="Jan 04, 2019">fcsfiles</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cmapfile" title="Jan 04, 2019">cmapfile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#molmass" title="Jan 04, 2019">molmass</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#netpbmfile" title="Jan 04, 2019">netpbmfile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#oiffile" title="Jan 04, 2019">oiffile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sdtfile" title="Jan 04, 2019">sdtfile</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#netifaces" title="Jan 02, 2019">netifaces</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#osqp" title="Dec 30, 2018">osqp</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#spglib" title="Dec 30, 2018">spglib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#spectrum" title="Dec 30, 2018">spectrum</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycluster" title="Dec 30, 2018">pycluster</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zodbpickle" title="Dec 22, 2018">zodbpickle</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#liblinear" title="Dec 22, 2018">liblinear</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#libsvm" title="Dec 22, 2018">libsvm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cellprofiler" title="Dec 21, 2018">cellprofiler</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#biopython" title="Dec 18, 2018">biopython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#yarl" title="Dec 14, 2018">yarl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fasttsne" title="Dec 05, 2018">fasttsne</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyzopfli" title="Dec 05, 2018">pyzopfli</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cantera" title="Dec 03, 2018">cantera</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#multidict" title="Nov 30, 2018">multidict</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#rpy2" title="Nov 28, 2018">rpy2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#vtk" title="Nov 24, 2018">vtk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ecos" title="Nov 20, 2018">ecos</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cx_freeze" title="Nov 19, 2018">cx_freeze</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cartopy" title="Nov 19, 2018">cartopy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mayavi" title="Nov 14, 2018">mayavi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#coverage" title="Nov 14, 2018">coverage</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gpy" title="Nov 12, 2018">gpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo" title="Nov 05, 2018">pycairo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fasttext" title="Oct 29, 2018">fasttext</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymcubes" title="Oct 28, 2018">pymcubes</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ffnet" title="Oct 28, 2018">ffnet</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pulp" title="Oct 25, 2018">pulp</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mod_wsgi" title="Oct 24, 2018">mod_wsgi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#hyperspy" title="Oct 24, 2018">hyperspy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#xxhash" title="Oct 23, 2018">xxhash</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pillow-simd" title="Oct 22, 2018">pillow-simd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pystruct" title="Oct 16, 2018">pystruct</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#iris" title="Oct 12, 2018">iris</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mistune" title="Oct 12, 2018">mistune</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#freeimagedll" title="Oct 06, 2018">freeimagedll</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ad3" title="Oct 02, 2018">ad3</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cmarkgfm" title="Sep 29, 2018">cmarkgfm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tinyarray" title="Sep 28, 2018">tinyarray</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pylzma" title="Sep 27, 2018">pylzma</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cchardet" title="Sep 27, 2018">cchardet</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#swiglpk" title="Sep 21, 2018">swiglpk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fisx" title="Sep 06, 2018">fisx</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#openexr" title="Sep 02, 2018">openexr</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#chompack" title="Sep 01, 2018">chompack</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql" title="Aug 31, 2018">pymssql</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-geohash" title="Aug 13, 2018">python-geohash</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyamg" title="Aug 10, 2018">pyamg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#btrees" title="Aug 10, 2018">btrees</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pysqlite" title="Aug 07, 2018">pysqlite</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pendulum" title="Aug 01, 2018">pendulum</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud" title="Jul 28, 2018">wordcloud</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#louvain-igraph" title="Jul 28, 2018">louvain-igraph</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-igraph" title="Jul 28, 2018">python-igraph</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mplcairo" title="Jul 24, 2018">mplcairo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#rtree" title="Jul 22, 2018">rtree</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#winrandom" title="Jul 22, 2018">winrandom</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#assimulo" title="Jul 22, 2018">assimulo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyfmi" title="Jul 22, 2018">pyfmi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyfm" title="Jul 22, 2018">pyfm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#boost.python" title="Jul 20, 2018">boost.python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pythonmagick" title="Jul 20, 2018">pythonmagick</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#polylearn" title="Jul 20, 2018">polylearn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cvxcanon" title="Jul 19, 2018">cvxcanon</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame" title="Jul 19, 2018">pygame</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#blist" title="Jul 19, 2018">blist</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#tensorflow" title="Jul 19, 2018">tensorflow</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#multineat" title="Jul 18, 2018">multineat</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#qutip" title="Jul 18, 2018">qutip</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#openbabel" title="Jul 18, 2018">openbabel</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.vectorplot" title="Jul 18, 2018">scikits.vectorplot</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyfits" title="Jul 18, 2018">pyfits</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#nitime" title="Jul 17, 2018">nitime</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zipline" title="Jul 17, 2018">zipline</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#zs" title="Jul 16, 2018">zs</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#grako" title="Jul 16, 2018">grako</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lru_dict" title="Jul 16, 2018">lru_dict</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-misc" title="Jul 16, 2018">scikit-misc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyvrml97" title="Jul 16, 2018">pyvrml97</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sparsesvd" title="Jul 16, 2018">sparsesvd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyephem" title="Jul 16, 2018">pyephem</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#seqlearn" title="Jul 16, 2018">seqlearn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cyordereddict" title="Jul 16, 2018">cyordereddict</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#kivy" title="Jul 16, 2018">kivy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#chaco" title="Jul 13, 2018">chaco</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#enable" title="Jul 13, 2018">enable</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyrxp" title="Jul 13, 2018">pyrxp</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bsddb3" title="Jul 04, 2018">bsddb3</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#llist" title="Jul 01, 2018">llist</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ceodbc" title="Jun 30, 2018">ceodbc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#liblas" title="Jun 30, 2018">liblas</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#holopy" title="Jun 30, 2018">holopy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#qt_graph_helpers" title="Jun 29, 2018">qt_graph_helpers</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#guiqwt" title="Jun 29, 2018">guiqwt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#veusz" title="Jun 29, 2018">veusz</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqwt" title="Jun 29, 2018">pyqwt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4" title="Jun 29, 2018">pyqt4</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#simplejson" title="Jun 29, 2018">simplejson</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymvpa" title="Jun 28, 2018">pymvpa</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyasn" title="Jun 28, 2018">pyasn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-cycling" title="Jun 22, 2018">scikit-cycling</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bsdiff4" title="Jun 21, 2018">bsdiff4</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#entropy" title="Jun 12, 2018">entropy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#stratify" title="Jun 07, 2018">stratify</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pocketsphinx" title="Jun 04, 2018">pocketsphinx</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mlpy" title="May 21, 2018">mlpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#milk" title="May 21, 2018">milk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#trollius" title="May 16, 2018">trollius</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#statsmodels" title="May 16, 2018">statsmodels</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#brotlipy" title="May 06, 2018">brotlipy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pgmagick" title="May 05, 2018">pgmagick</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#vitables" title="Apr 29, 2018">vitables</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#menpo" title="Apr 24, 2018">menpo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#faulthandler" title="Apr 23, 2018">faulthandler</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#thriftpy" title="Apr 22, 2018">thriftpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gmpy" title="Apr 22, 2018">gmpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#marisa-trie" title="Apr 14, 2018">marisa-trie</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bcolz" title="Apr 14, 2018">bcolz</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib" title="Apr 11, 2018">ta-lib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ujson" title="Apr 10, 2018">ujson</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#py-lmdb" title="Apr 09, 2018">py-lmdb</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype" title="Apr 03, 2018">jpype</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#freesasa" title="Mar 21, 2018">freesasa</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyldap" title="Mar 15, 2018">pyldap</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cytoolz" title="Mar 06, 2018">cytoolz</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#xylib-py" title="Mar 04, 2018">xylib-py</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cyrasterize" title="Mar 03, 2018">cyrasterize</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyswisseph" title="Mar 03, 2018">pyswisseph</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode" title="Feb 28, 2018">ode</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#salientdetect" title="Feb 28, 2018">salientdetect</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#setproctitle" title="Feb 27, 2018">setproctitle</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cdecimal" title="Feb 26, 2018">cdecimal</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#crcmod" title="Feb 26, 2018">crcmod</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#crc16" title="Feb 26, 2018">crc16</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycld2" title="Feb 26, 2018">pycld2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#planar" title="Feb 26, 2018">planar</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#autopy" title="Feb 26, 2018">autopy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyx" title="Feb 26, 2018">pyx</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#rtmidi-python" title="Feb 26, 2018">rtmidi-python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyflux" title="Feb 25, 2018">pyflux</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#postgresadapter" title="Feb 25, 2018">postgresadapter</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#datrie" title="Feb 25, 2018">datrie</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#polygon" title="Feb 25, 2018">polygon</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pystemmer" title="Feb 25, 2018">pystemmer</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqpbo" title="Feb 25, 2018">pyqpbo</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydde" title="Feb 24, 2018">pydde</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#x86cpu" title="Feb 24, 2018">x86cpu</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fisher" title="Feb 24, 2018">fisher</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymc" title="Feb 24, 2018">pymc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#hddm" title="Feb 24, 2018">hddm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#heatmap" title="Feb 24, 2018">heatmap</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jsonlib" title="Feb 24, 2018">jsonlib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#intbitset" title="Feb 24, 2018">intbitset</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sasl" title="Feb 23, 2018">sasl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#flann" title="Feb 23, 2018">flann</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pybox2d" title="Feb 18, 2018">pybox2d</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#natgrid" title="Feb 18, 2018">natgrid</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bintrees" title="Feb 17, 2018">bintrees</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lp_solve" title="Feb 10, 2018">lp_solve</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#aspell-python" title="Feb 09, 2018">aspell-python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pykinsol" title="Feb 06, 2018">pykinsol</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycvodes" title="Feb 06, 2018">pycvodes</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twainmodule" title="Feb 04, 2018">twainmodule</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-levenshtein" title="Feb 04, 2018">python-levenshtein</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyspharm" title="Feb 04, 2018">pyspharm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyminuit" title="Feb 04, 2018">pyminuit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyeda" title="Feb 04, 2018">pyeda</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyfltk" title="Feb 03, 2018">pyfltk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#simpleparse" title="Feb 03, 2018">simpleparse</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#thrift" title="Jan 29, 2018">thrift</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyemd" title="Jan 29, 2018">pyemd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely" title="Jan 26, 2018">shapely</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pypmc" title="Jan 23, 2018">pypmc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wrf_python" title="Jan 22, 2018">wrf_python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#quantlib" title="Jan 16, 2018">quantlib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#kapteyn" title="Jan 03, 2018">kapteyn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#simpleaudio" title="Dec 28, 2017">simpleaudio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pylibtiff" title="Dec 21, 2017">pylibtiff</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#fann2" title="Dec 14, 2017">fann2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-umfpack" title="Oct 26, 2017">scikit-umfpack</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gr" title="Aug 06, 2017">gr</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyarrow" title="Jun 19, 2017">pyarrow</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside" title="Jun 05, 2017">pyside</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-cjson" title="May 02, 2017">python-cjson</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#py_gd" title="Mar 18, 2017">py_gd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#nipy" title="Feb 11, 2017">nipy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#libtfr" title="Dec 31, 2016">libtfr</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mathutils" title="Dec 02, 2016">mathutils</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyfftw" title="Nov 21, 2016">pyfftw</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyviennacl" title="Nov 21, 2016">pyviennacl</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#blz" title="Nov 20, 2016">blz</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bigfloat" title="Nov 20, 2016">bigfloat</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cyassimp" title="Nov 14, 2016">cyassimp</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sima" title="Nov 06, 2016">sima</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymca" title="Nov 06, 2016">pymca</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#friture" title="Nov 06, 2016">friture</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycogent" title="Nov 06, 2016">pycogent</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#blaze" title="May 07, 2016">blaze</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.audiolab" title="Apr 12, 2016">scikits.audiolab</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#la" title="Apr 11, 2016">la</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bazaar" title="Feb 07, 2016">bazaar</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#dynd" title="Feb 04, 2016">dynd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#genshi" title="Feb 03, 2016">genshi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-sundials" title="Jan 29, 2016">python-sundials</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#glumpy" title="Jan 18, 2016">glumpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyamf" title="Dec 19, 2015">pyamf</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#libxml-python" title="Nov 30, 2015">libxml-python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymcmc" title="Oct 22, 2015">pymcmc</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyksvd" title="Sep 28, 2015">pyksvd</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pybluez" title="Sep 10, 2015">pybluez</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygraphviz" title="Sep 07, 2015">pygraphviz</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mxbase" title="Aug 28, 2015">mxbase</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#libpython" title="Jun 20, 2015">libpython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymunk" title="May 05, 2015">pymunk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pygtk" title="Feb 05, 2015">pygtk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cgal-bindings" title="Feb 01, 2015">cgal-bindings</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#bio_formats" title="Jan 30, 2015">bio_formats</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pysfml" title="Jan 30, 2015">pysfml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyexiv2" title="Jan 30, 2015">pyexiv2</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pylibdeconv" title="Jan 28, 2015">pylibdeconv</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#iocbio" title="Jan 28, 2015">iocbio</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymix" title="Jan 21, 2015">pymix</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#umysql" title="Jan 20, 2015">umysql</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lazyflow" title="Jan 20, 2015">lazyflow</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mmlib" title="Jan 19, 2015">mmlib</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.timeseries" title="Jan 14, 2015">scikits.timeseries</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#casuarius" title="Jan 13, 2015">casuarius</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wxpython" title="Jan 13, 2015">wxpython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ilastik" title="Jan 11, 2015">ilastik</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pywcs" title="Jan 08, 2015">pywcs</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scientificpython" title="Jan 07, 2015">scientificpython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#vpython" title="Jan 06, 2015">vpython</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#nmoldyn" title="Jan 06, 2015">nmoldyn</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mmtk" title="Jan 06, 2015">mmtk</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyalembic" title="Jan 06, 2015">pyalembic</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#polymode" title="Jan 05, 2015">polymode</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.delaunay" title="Jan 03, 2015">scikits.delaunay</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cld" title="Dec 31, 2014">cld</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#py-fcm" title="Dec 31, 2014">py-fcm</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#oursql" title="Dec 31, 2014">oursql</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#py2exe" title="Dec 31, 2014">py2exe</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymutt" title="Dec 31, 2014">pymutt</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#carray" title="Dec 30, 2014">carray</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#llvmpy" title="Dec 30, 2014">llvmpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#cgkit" title="Dec 30, 2014">cgkit</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymedia" title="Dec 29, 2014">pymedia</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy-cluster" title="Dec 28, 2014">scipy-cluster</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.scattpy" title="Dec 28, 2014">scikits.scattpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.samplerate" title="Dec 28, 2014">scikits.samplerate</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.ann" title="Dec 28, 2014">scikits.ann</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyxml" title="Dec 27, 2014">pyxml</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pytst" title="Dec 27, 2014">pytst</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#delny" title="Dec 27, 2014">delny</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python" title="Dec 26, 2014">mysql-python</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#htseq" title="Dec 26, 2014">htseq</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyusb-ftdi" title="Dec 26, 2014">pyusb-ftdi</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#silvercity" title="Dec 26, 2014">silvercity</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#steps" title="Dec 25, 2014">steps</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pysparse" title="Dec 25, 2014">pysparse</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyropes" title="Dec 25, 2014">pyropes</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.hydroclimpy" title="Dec 24, 2014">scikits.hydroclimpy</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#sendkeys" title="Dec 24, 2014">sendkeys</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydbg" title="Dec 24, 2014">pydbg</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyisapie" title="Feb 13, 2014">pyisapie</a></li>
+</ol>
+<hr>
+<ul class="pylibs">
+<li style="float:right;font-size:1px"><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/python_bogus_project_honeypot-1450687928.709678-py2.py3-none-any.whl">&nbsp;</a></li><li></li>
+<li><a id="ad3"></a><strong><a href="https://github.com/andre-martins/AD3">AD3</a></strong>, Alternating Directions Dual Decomposition.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,46,105,52,50,109,116,110,54,49,112,106,111,119,100,108,98,47,104,45,97,51,101,99,113,55], &quot;52:G?E7;@C=DB30308BF93HBF93H4B&lt;16D30&lt;A&gt;&quot;);?&quot;javascript:   dl(&quot;" title="[556?KB] [Oct 02, 2018]">ad3?2.2.1?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,111,101,50,98,51,100,99,110,46,95,47,109,45,112,108,49,105,54,106,55,119,52,97,113,104,116], &quot;IEBG31A0:F54&lt;2828?&lt;6=2C&lt;6=2C;&lt;D@79F;5AE8DH&gt;&quot;);?&quot;javascript:   dl(&quot;" title="[642?KB] [Oct 02, 2018]">ad3?2.2.1?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,45,113,100,116,109,111,98,51,99,46,50,105,53,52,54,49,112,47,101,108,97,104,119,110,106], &quot;3=H16B&gt;5AD270:9:9?08@7&lt;08@7&lt;40F;G7:9FEC&quot;);?&quot;javascript:   dl(&quot;" title="[533?KB] [Oct 02, 2018]">ad3?2.2.1?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,46,100,105,104,116,111,106,53,99,52,97,112,50,113,49,45,119,54,47,98,51,101,95,108,110,109], &quot;496=CEA5B:1D?&lt;0&lt;0&gt;?8;D7?8;D7I?@2HF:I1A90@3G&quot;);?&quot;javascript:   dl(&quot;" title="[596?KB] [Oct 02, 2018]">ad3?2.2.1?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,119,110,106,45,50,113,112,108,101,51,49,109,111,105,116,54,99,100,46,47,52,97,98,104], &quot;&gt;D25F8?&lt;CEA934B4B:3@69?3@69?;30=194B0G7&quot;);?&quot;javascript:   dl(&quot;" title="[534?KB] [Oct 02, 2018]">ad3?2.2.1?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,105,112,106,50,46,54,101,111,108,109,49,97,113,45,116,99,100,47,52,119,110,95,104,98,51], &quot;&gt;B2&lt;G657A;@H=3434:=?1H5=?1H59=C0DE;9@5B4CF8&quot;);?&quot;javascript:   dl(&quot;" title="[598?KB] [Oct 02, 2018]">ad3?2.2.1?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,50,119,52,47,98,45,104,97,110,99,109,113,105,106,112,108,54,101,100,55,111,116,49,51,46], &quot;E2=;4A@D37BG50H0HF59&gt;GC59&gt;GC:51&lt;8G0H16?&quot;);?&quot;javascript:   dl(&quot;" title="[540?KB] [Oct 02, 2018]">ad3?2.2.1?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,49,95,119,46,55,109,50,101,54,52,116,110,100,45,113,105,47,99,51,112,108,97,98,106,111,104], &quot;:9G&gt;F78H@E&lt;B=63630=ACB4=ACB45=2?;1E5&lt;8932ID&quot;);?&quot;javascript:   dl(&quot;" title="[609?KB] [Oct 02, 2018]">ad3?2.2.1?cp37?cp37m?win_amd64.whl</a></li>
+</ul>
+</li>
+<li><a id="aggdraw"></a><strong><a href="https://github.com/pytroll/aggdraw">Aggdraw</a></strong>, a high-quality graphics engine for PIL based on the
+ <a href="http://antigrain.com/">Anti-Grain Geometry</a> library.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,112,51,45,100,46,54,103,114,119,108,113,55,49,106,105,48,101,99,116,111,52,110,47,98,104,109,50,97], &quot;BD=:G@5CFK6637K82&lt;414&lt;?2A0J;2A0J;I28&gt;E1J48H9&quot;);?&quot;javascript:   dl(&quot;" title="[310?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,106,101,45,119,105,108,109,50,48,52,99,95,98,113,51,104,54,114,46,49,55,97,100,116,47,110,111,103,112], &quot;G90=&lt;1@JHEKKFAE32CB&gt;BC82:L7D2:L7D6234I;E6F@9B3?5&quot;);?&quot;javascript:   dl(&quot;" title="[370?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,99,105,46,49,103,114,51,48,54,50,53,111,97,116,112,52,108,98,100,101,104,109,106,47,110,113,45,119], &quot;=?FIAC8;G&lt;44B5&lt;KJ326237J0&gt;6:J0&gt;6:EJK1H692KD@&quot;);?&quot;javascript:   dl(&quot;" title="[312?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,54,47,99,108,48,111,100,116,95,46,98,112,106,104,53,114,103,110,97,109,52,119,51,105,45,101,113,49], &quot;7D&lt;J:I051B@@6?BEHK9F9K4H2;F&gt;H2;F&gt;CHEGA8BC60D9E=3&quot;);?&quot;javascript:   dl(&quot;" title="[369?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,106,109,45,113,110,48,100,98,47,52,114,112,49,54,108,103,111,119,97,105,116,101,50,104,51,99,46], &quot;D9037E=@8B??6:BA2&lt;JHJ&lt;52I;H=2I;H=12AC4HFJAG&gt;&quot;);?&quot;javascript:   dl(&quot;" title="[312?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,108,101,47,45,48,95,110,52,113,109,100,104,111,49,112,51,103,116,99,46,105,119,98,114,106,54,97], &quot;A7H8F1I&lt;2J@@:GJE3=C?C=43B&gt;?I3B&gt;?I93ED65J9:I7CE;0&quot;);?&quot;javascript:   dl(&quot;" title="[369?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,48,111,99,55,98,97,109,50,54,45,108,105,112,103,49,114,101,100,106,104,51,119,52,113,110,116,46,47], &quot;IFBG4@81K5==A?5E9&gt;JDJ&gt;092&lt;D392&lt;D369E;HD7JEC:&quot;);?&quot;javascript:   dl(&quot;" title="[317?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,113,47,52,45,97,114,98,100,55,116,99,103,108,49,95,101,105,104,112,109,46,110,54,51,111,48,106,119], &quot;92J06?FH14;;754K3=DGD=I3:BG83:BG8C3K@E&gt;4C7F2DKA&lt;&quot;);?&quot;javascript:   dl(&quot;" title="[371?KB] [Mar 11, 2019]">aggdraw?1.3.10?cp37?cp37m?win_amd64.whl</a></li>
+</ul>
+</li>
+<li><a id="aiohttp"></a><strong><a href="https://github.com/KeepSafe/aiohttp/">Aiohttp</a></strong>, a http client/server for asyncio.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,50,112,99,45,98,105,108,104,52,46,53,106,47,97,51,110,109,119,113,54,116,111,101], &quot;D8;B4FCE&lt;=5E7DD13&gt;9:98321&gt;:321&gt;:@3A5?&gt;09A76&quot;);?&quot;javascript:   dl(&quot;" title="[577?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,110,95,109,106,104,116,105,99,112,97,98,111,101,108,119,53,52,100,47,46,113,51,54,45], &quot;5@3D:&lt;F;B96;4558GEC?C@G78E?G78E?2G&gt;60192AF@C&gt;4=&quot;);?&quot;javascript:   dl(&quot;" title="[605?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,51,45,50,108,105,101,116,99,112,98,47,52,119,110,54,53,104,109,46,113,106,97,111], &quot;6;DC95&gt;F:E4F@66810B?B;1780&gt;1780&gt;A1&lt;4=02B&lt;@3&quot;);?&quot;javascript:   dl(&quot;" title="[583?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,52,101,47,97,105,53,116,54,111,99,100,119,110,113,51,95,46,104,98,109,45,112,108,106], &quot;60G=B1782348A66ED&gt;@5@0D9E&gt;7D9E&gt;7CD;4&lt;?3C:70@;AF&quot;);?&quot;javascript:   dl(&quot;" title="[611?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,97,55,46,54,51,101,53,110,109,50,47,104,112,98,119,52,45,108,105,113,106,99,111,116], &quot;G?DC=53F:0BF;GG&lt;@4262?@E&lt;41@E&lt;418@&gt;B7492&gt;;A&quot;);?&quot;javascript:   dl(&quot;" title="[590?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,55,97,53,52,111,45,104,100,95,101,113,106,116,108,54,51,47,109,98,99,105,112,119,110,46], &quot;&lt;3;:B9&gt;4@1D46&lt;&lt;E5?H2H35CE?05CE?0A5FDG81A7&gt;3HF6=&quot;);?&quot;javascript:   dl(&quot;" title="[617?KB] [Jan 13, 2019]">aiohttp?3.5.4?cp37?cp37m?win_amd64.whl</a></li>
+</ul>
+</li>
+<li><a id="akima"></a><strong><a href="https://www.lfd.uci.edu/~gohlke/#python">Akima</a></strong> interpolation.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,106,57,51,113,49,98,107,108,99,97,47,55,110,45,52,104,111,116,101,50,109,119,112,46,48,54,105], &quot;A&gt;035BI@:96JD9=CH41G&gt;GCC=8FC;=8FC;D=EJ&lt;2CGE?7&quot;);?&quot;javascript:   dl(&quot;" title="[13?KB] [Apr 23, 2019]">akima?2019.4.22?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,104,107,52,97,106,55,99,119,95,100,57,45,109,48,110,105,54,49,108,112,116,47,101,98,50,111,113,46], &quot;D24JGF@IE31?&lt;3;H=A:K2KHH;6CH5;6CH5&lt;;7?&gt;83&lt;9@2K70B&quot;);?&quot;javascript:   dl(&quot;" title="[13?KB] [Apr 23, 2019]">akima?2019.4.22?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,98,108,52,50,105,54,46,110,113,109,45,99,53,48,116,107,104,106,101,47,112,97,111,51,49,119,57], &quot;&gt;2A80B5FCE?49E:3=HJ62633:;DG&lt;:;DG&lt;9:I47G36I@1&quot;);?&quot;javascript:   dl(&quot;" title="[14?KB] [Apr 23, 2019]">akima?2019.4.22?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,119,95,106,107,109,53,52,112,50,108,104,116,57,49,105,101,99,46,51,111,48,110,100,45,54,98,47,97,113], &quot;;62LI?HCJK3&gt;4KG8D=&lt;A6A88G@7B5G@7B54G0&gt;E1K4FH6A0:9&quot;);?&quot;javascript:   dl(&quot;" title="[15?KB] [Apr 23, 2019]">akima?2019.4.22?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,54,99,98,50,112,47,116,104,107,108,111,52,57,49,101,46,106,51,109,48,45,110,97,105,113,119], &quot;6;@H2&gt;0:5F8GBFD3C=&lt;?;?33D14A0D14A0BDIGEA3?I79&quot;);?&quot;javascript:   dl(&quot;" title="[14?KB] [Apr 23, 2019]">akima?2019.4.22?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,107,45,104,111,52,98,100,54,105,99,95,110,106,108,97,51,109,50,119,101,116,46,49,48,47,57,113,112], &quot;D4&lt;J5C73H&gt;08@&gt;1AGFIE4EAA19K?719K?7@1B8;:&gt;@674EB2=&quot;);?&quot;javascript:   dl(&quot;" title="[15?KB] [Apr 23, 2019]">akima?2019.4.22?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,99,108,110,112,55,49,50,48,116,54,97,47,106,98,111,57,46,107,113,104,119,52,45,105,109,51,101], &quot;8E&lt;B=J9&gt;;:AGH:F675?@E@66F03I4F03I4HFDG2I6@DC1&quot;);?&quot;javascript:   dl(&quot;" title="[14?KB] [Apr 23, 2019]">akima?2019.4.22?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,45,54,101,109,49,119,99,98,111,113,55,107,57,108,97,100,46,52,104,48,50,110,47,51,112,106,95,116,105], &quot;KAI97218F&gt;;L3&gt;0DC4&lt;@A@DD06HG:06HG:305LEJ&gt;3?1A@5B=&quot;);?&quot;javascript:   dl(&quot;" title="[15?KB] [Apr 23, 2019]">akima?2019.4.22?cp37?cp37m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,54,99,52,47,97,109,56,49,50,98,112,105,46,45,110,51,57,48,119,104,107,113,108,111,101,106,116], &quot;J2IE9H0G34D;54=8A7@&lt;2&lt;88=1:?6=1:?65=B;&gt;?8&lt;BCF&quot;);?&quot;javascript:   dl(&quot;" title="[14?KB] [Jun 04, 2019]">akima?2019.4.22?cp38?cp38m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,57,107,98,119,56,106,109,49,110,46,97,105,50,99,111,104,108,100,112,51,95,113,47,101,54,45,116,52,48], &quot;JK5E2GH&gt;F:1;6:I&lt;L709K9&lt;&lt;I=BC4I=BC46I3;8D:6AHK93?@&quot;);?&quot;javascript:   dl(&quot;" title="[15?KB] [Jun 04, 2019]">akima?2019.4.22?cp38?cp38m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,106,103,122,98,105,46,48,54,114,47,50,97,49,101,113,52,111,116,45,57,107,109], &quot;A?0&gt;3=7@9;D4E;B:6&lt;C5?5::5A;8512&quot;);?&quot;javascript:   dl(&quot;" title="[9?KB] [Apr 23, 2019]">akima?2019.4.22.tar.gz</a></li>
+</ul>
+</li>
+<li><a id="apsw"></a><strong><a href="https://github.com/rogerbinns/apsw">APSW</a></strong>, another Python <a href="http://www.sqlite.org/">SQLite</a> wrapper.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,112,46,111,108,115,109,51,110,99,119,98,47,50,104,101,105,45,54,97,52,116,49,55,113,106], &quot;DCHG:&gt;A2;B049@61&lt;F1&lt;1024DE@80&lt;F@80&lt;F5@9?76&lt;19=3&quot;);?&quot;javascript:   dl(&quot;" title="[608?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,108,99,119,115,55,51,54,106,101,109,50,104,116,45,110,100,95,105,112,97,98,52,113,111,46,49,47], &quot;&lt;E7FD86GJCB32=5H:4H:HBG3&lt;I=1B:4=1B:49=2A&gt;@C9?6EH2;0&quot;);?&quot;javascript:   dl(&quot;" title="[790?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,45,101,47,51,49,53,115,109,46,110,105,111,52,99,50,54,112,97,104,113,116,55,119,106,98,108], &quot;D&lt;GCH1?;2A@6F038&gt;E8&gt;8@;6D40=@350=@3570F:93&gt;8FBI&quot;);?&quot;javascript:   dl(&quot;" title="[627?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,104,95,49,112,52,100,108,109,98,54,50,45,113,55,99,101,105,97,47,115,106,46,116,53,110,119,111,51], &quot;F4D&lt;8?9JBA3CI;KE:=E:E3JCF2;&gt;3KG;&gt;3KG7;I@H1A7594EI06&quot;);?&quot;javascript:   dl(&quot;" title="[772?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,116,104,99,97,50,106,101,113,109,55,115,49,98,110,54,108,111,51,46,105,52,45,47,119,112], &quot;0D57&lt;6&gt;@F3H:GEAB49B4BH@:0;E2HA&gt;E2HA&gt;8EGC=A4BG1?&quot;);?&quot;javascript:   dl(&quot;" title="[627?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,105,101,104,112,95,98,47,52,99,106,110,108,97,116,111,100,51,50,45,109,49,55,46,113,119,115,54], &quot;=79G51J&gt;6&lt;3IHB@FAEFAF3&gt;I=DB83@JB83@JCBH0:4&lt;C?J7FH2;&quot;);?&quot;javascript:   dl(&quot;" title="[772?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,51,45,50,55,112,115,54,108,49,47,106,105,99,46,101,119,52,98,97,104,113,110,116,111,109], &quot;F@:DA&gt;6G9B45?10=23=2=4G5F81&lt;4031&lt;403H1?;E02=?C7&quot;);?&quot;javascript:   dl(&quot;" title="[660?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,95,109,100,101,51,46,111,116,99,55,98,113,115,54,108,112,50,110,105,106,47,119,52,104,45,49,97], &quot;7FC;:3=6DJ?&lt;EH45@95@5?6&lt;7IH8?49H8?491HEBA0J12=F5EG&gt;&quot;);?&quot;javascript:   dl(&quot;" title="[793?KB] [Mar 07, 2019]">apsw?3.27.2.post1?cp37?cp37m?win_amd64.whl</a></li>
+</ul>
+</li>
+<li><a id="arctic"></a><strong><a href="https://github.com/manahl/arctic">Arctic</a></strong>, a high performance datastore for time series and tick data.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,98,55,52,50,106,104,110,119,54,114,105,109,49,113,45,51,99,46,108,116,111,101,112,47,97], &quot;C24=0E8DGH9@C:@&gt;&lt;A81A&lt;&gt;@F31&gt;@F31;&gt;7:6?3A75B&quot;);?&quot;javascript:   dl(&quot;" title="[174?KB] [Jul 13, 2018]">arctic?1.67.1?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,113,55,49,112,104,47,46,97,111,101,114,116,99,109,106,52,119,108,54,45,100,105,110,95,50,98], &quot;;?&gt;0I9B857:&lt;;E&lt;C26B162C&lt;3H1C&lt;3H1=C@EFG7=DB?6@4A&quot;);?&quot;javascript:   dl(&quot;" title="[192?KB] [Jul 13, 2018]">arctic?1.67.1?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,55,104,101,113,97,110,50,46,54,45,116,53,108,112,51,98,106,119,47,114,109,99,49,105,111,52], &quot;:I@3?28HB4CE:GE9F7807F9E=&gt;;9E=&gt;;D9AG5&gt;67A1&lt;&quot;);?&quot;javascript:   dl(&quot;" title="[168?KB] [Jul 13, 2018]">arctic?1.67.1?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,116,111,110,113,45,98,105,100,51,49,108,99,55,109,52,114,101,97,104,46,54,112,53,95,119,47,106], &quot;0&gt;J35@D1IA?;06;49CD&lt;C94;E8F4;E8F=4H62GA=7D&gt;CHB:&quot;);?&quot;javascript:   dl(&quot;" title="[187?KB] [Jul 13, 2018]">arctic?1.67.1?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,45,104,47,101,50,109,52,99,49,113,51,108,98,110,105,46,106,111,54,116,112,114,55,119,97], &quot;C6@9&lt;3BA2HE7C&gt;708?BF?807D:B07D:B50G&gt;=:4?G1;&quot;);?&quot;javascript:   dl(&quot;" title="[169?KB] [Jul 13, 2018]">arctic?1.67.1?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,46,110,113,55,49,101,45,114,108,111,98,52,119,104,116,109,54,47,106,112,51,105,97,100,99,95], &quot;&gt;;B2:5@9AF7H&gt;EH640@3046HCD@6HCD@?6&lt;E1IF?G@;0&lt;=8&quot;);?&quot;javascript:   dl(&quot;" title="[187?KB] [Jul 13, 2018]">arctic?1.67.1?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,104,110,112,111,50,45,49,119,113,54,46,114,51,47,52,101,109,116,98,99,97,106,105,108,55], &quot;A&gt;E8B?93=D;CAFC56:9H:65C2&lt;H5C2&lt;H@57F1&lt;4:70G&quot;);?&quot;javascript:   dl(&quot;" title="[172?KB] [Jul 13, 2018]">arctic?1.67.1?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,114,52,108,95,98,49,101,119,111,109,46,47,112,45,100,99,110,51,105,54,104,113,55,97,106,116], &quot;I1HE46C8;G0?IB?=5:CF:5=?&lt;AF=?&lt;AF9=7B@3G9&gt;C1:7D2&quot;);?&quot;javascript:   dl(&quot;" title="[195?KB] [Jul 13, 2018]">arctic?1.67.1?cp37?cp37m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,57,106,114,99,101,116,51,119,105,52,50,104,46,54,47,121,113,111,55,45,108,110,97,112,49,98], &quot;591@I4=A&gt;F23583CH&lt;B0&lt;:CG?:&lt;G?6CEAE4CFE?&lt;7;D&quot;);?&quot;javascript:   dl(&quot;" title="[138?KB] [May 26, 2019]">arctic?1.79.2?py2.py3?none?any.whl</a></li>
+</ul>
+</li>
+<li><a id="aspell-python"></a><strong><a href="https://github.com/WojciechMula/aspell-python">Aspell-python</a></strong>, bindings for <a href="http://aspell.net/">GNU Aspell</a>.<br>
+ Using the <a href="http://wiki.lyx.org/uploads/Windows/aspell-source/">LyX fork</a>.<br>
+ Extract the dictionaries to <em>C:\ProgramData\Aspell\Dictionaries</em>.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,52,116,113,122,108,112,101,119,47,106,97,50,111,45,54,49,51,110,46,56,105,115,55,98,48], &quot;1092G6&gt;&lt;8:E5644&gt;=6A=;H?FBHCB;0=H=7DA@;B3D5&quot;);?&quot;javascript:   dl(&quot;" title="[2.2?MB] [Feb 09, 2018]">aspell6?en?2017.08.24?0?win32.zip</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,108,49,47,122,52,113,111,56,97,110,105,109,45,116,101,54,100,106,50,95,98,115,119,46,112,55,48], &quot;=4A5D&gt;?628EH&gt;00?&lt;&gt;9&lt;BJ1IGJ7GB4&lt;J&lt;F:9C8;@?4G3:H&quot;);?&quot;javascript:   dl(&quot;" title="[2.2?MB] [Feb 09, 2018]">aspell6?en?2017.08.24?0?win_amd64.zip</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,99,52,101,45,112,54,50,104,115,46,55,121,97,111,53,105,106,109,110,49,119,51,98,95,108,113,47,116], &quot;K1@IF25=J&lt;842HHG4;K7=B3C9C&gt;3046:3046:A3D?BE69D7H&quot;);?&quot;javascript:   dl(&quot;" title="[213?KB] [Feb 09, 2018]">aspell_python?1.15?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,101,54,115,46,106,110,47,52,45,100,119,99,98,49,111,55,50,121,113,105,97,53,116,108,112,95,104,109], &quot;F74B&lt;01&gt;6D2H0GGIHAFJ&gt;58=3=E8;H@?8;H@?K8:C5IDK9173:JG&quot;);?&quot;javascript:   dl(&quot;" title="[251?KB] [Feb 09, 2018]">aspell_python?1.15?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,49,104,119,52,116,51,112,95,98,50,45,47,110,99,54,111,106,46,101,115,97,113,53,105,108,109,121], &quot;43@E8B&gt;?;DC6BHH76J41?&lt;:0A0F:=65F:=65FI:2G&lt;59A21H&quot;);?&quot;javascript:   dl(&quot;" title="[219?KB] [Feb 09, 2018]">aspell_python?1.15?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,47,101,105,99,116,49,51,104,106,115,95,112,53,108,109,110,54,97,52,119,111,113,98,121,45,46,100], &quot;4B8EF1@D0A9;1==:;G47D?H5I5&lt;H3;6&lt;H3;6&lt;&gt;HC2?:A&gt;J@BIC7=&quot;);?&quot;javascript:   dl(&quot;" title="[257?KB] [Feb 09, 2018]">aspell_python?1.15?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,50,45,98,113,53,112,121,108,115,119,52,49,110,95,101,116,99,51,111,104,46,54,109,106,105,47,97], &quot;?:G32&gt;EBIJ85&gt;77=56?CB&lt;1;D;41@5AE1@5AEF19H&lt;A0D9C7&quot;);?&quot;javascript:   dl(&quot;" title="[219?KB] [Feb 09, 2018]">aspell_python?1.15?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,53,109,45,115,104,106,46,54,95,52,49,112,119,51,110,98,99,97,105,113,121,47,101,116,108,111,100], &quot;G95C?F7IEA3;FHH8;DG4I&gt;2:6:02@;=72@;=712&lt;B&gt;8A1J796&lt;4H&quot;);?&quot;javascript:   dl(&quot;" title="[257?KB] [Feb 09, 2018]">aspell_python?1.15?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,97,111,106,95,51,109,47,46,119,104,99,115,52,53,112,110,108,116,55,121,49,50,54,101,98,105,45,113], &quot;A&lt;2KHGF160;&gt;G@@3&gt;CA91?JD7D=J:&gt;4BJ:&gt;4B5J8I?4E789@&quot;);?&quot;javascript:   dl(&quot;" title="[217?KB] [Feb 09, 2018]">aspell_python?1.15?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,111,51,52,104,106,113,112,99,98,115,121,55,100,109,95,54,45,47,119,46,53,108,101,116,97,105,110,49], &quot;G2458F?0AH96FEE&gt;6:G30J@KCKD@761;@761;=@BIJ&gt;H=&lt;?2CB3E&quot;);?&quot;javascript:   dl(&quot;" title="[254?KB] [Feb 09, 2018]">aspell_python?1.15?cp37?cp37m?win_amd64.whl</a></li>
+</ul>
+</li>
+<li><a id="assimulo"></a><strong><a href="http://www.jmodelica.org/assimulo">Assimulo</a></strong>, a package for solving ordinary differential equations.<br>
+ Requires <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy">numpy+mkl</a>.
+<ul>
+<li><a href="javascript:;" onclick="?javascript:dl([101,57,109,52,108,47,104,45,111,65,115,99,98,110,105,119,113,106,46,101,54,51,116,117,112,55,50], &quot;E2@?;BC74899=1F376IA06:GIH6:GIH16&gt;=&lt;DIA&gt;53&quot;);?&quot;javascript:   dl(&quot;" title="[2.2?MB] [Jul 22, 2018]">Assimulo?2.9?cp27?cp27m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,108,113,106,46,65,109,95,55,98,110,116,104,57,45,99,111,52,97,119,101,47,105,100,112,54,115,117,50], &quot;:@218CH?D4IIE5J0?=K3&lt;=&gt;GK7=&gt;GK75=BE96A5FH@3B;0&quot;);?&quot;javascript:   dl(&quot;" title="[3.3?MB] [Jul 22, 2018]">Assimulo?2.9?cp27?cp27m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,112,54,111,119,108,53,57,51,47,110,105,115,117,106,116,98,65,50,101,45,52,113,109,46,99,104], &quot;&gt;D=E?B128@;;:F&lt;42CAG6CH075CH075FC3:97AG3I4&quot;);?&quot;javascript:   dl(&quot;" title="[1.4?MB] [Jul 22, 2018]">Assimulo?2.9?cp35?cp35m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,99,109,108,57,116,51,98,113,104,46,112,50,65,111,117,97,101,45,53,115,110,105,95,119,52,100,47,106,54], &quot;4HK76@L=J&lt;CCE1&gt;2=A;93A0:5BA0:5B1AGEDF?1ILH9G82&quot;);?&quot;javascript:   dl(&quot;" title="[1.6?MB] [Jul 22, 2018]">Assimulo?2.9?cp35?cp35m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,104,110,98,115,111,116,65,52,109,105,112,106,57,45,119,117,99,108,46,51,50,47,113,101,54], &quot;57;F2GH4E63398?A4=DB&lt;=@:CH=@:CH8=&gt;91CDB&gt;0A&quot;);?&quot;javascript:   dl(&quot;" title="[1.4?MB] [Jul 22, 2018]">Assimulo?2.9?cp36?cp36m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,65,52,105,97,113,109,119,50,98,95,46,115,108,101,45,54,99,104,116,51,111,100,110,47,112,57,117,106], &quot;B1K48=?DG0;;25J&lt;D&gt;7:I&gt;@HC?&gt;@HC?5&gt;62F935E?1:6A&lt;&quot;);?&quot;javascript:   dl(&quot;" title="[1.6?MB] [Jul 22, 2018]">Assimulo?2.9?cp36?cp36m?win_amd64.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,112,111,52,47,101,55,99,106,54,113,57,119,45,51,98,105,50,117,115,65,116,46,109,108,110,104], &quot;D279&gt;4813CBB?FAG1&lt;@E:&lt;60=5&lt;60=5F&lt;;?H=@E;IG&quot;);?&quot;javascript:   dl(&quot;" title="[1.4?MB] [Jul 22, 2018]">Assimulo?2.9?cp37?cp37m?win32.whl</a></li>
+<li><a href="javascript:;" onclick="?javascript:dl([101,110,101,47,104,100,119,97,50,51,55,113,105,109,52,99,45,116,57,54,95,111,108,117,98,106,115,112,46,65], &quot;@=H:G1BD2LII;&lt;FED?7KA?&gt;J89?&gt;J89&lt;?5;0C6&lt;4B=K53E&quot;);?&quot;javascript:   dl(&quot;" title="[1.6?MB] [Jul 22, 2018]">Assimulo?2.9?cp37?cp37m?win_amd64.whl</a></li>
